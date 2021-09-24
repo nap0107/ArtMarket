@@ -15,6 +15,11 @@ def _cart_id(request):
 		cart = request.session.create()
 	return cart
 
+
+
+
+
+
 def add_cart(request, product_id):
 	current_user = request.user
 	product = Product.objects.get(id = product_id)
@@ -38,6 +43,21 @@ def add_cart(request, product_id):
 			) 
 		cart_item.save()			
 	return redirect('cart')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 def remove_cart(request, product_id):
 	product = get_object_or_404(Product, id = product_id)

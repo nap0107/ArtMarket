@@ -109,6 +109,10 @@ def activate(request, uidb64, token):
 def dashboard(request):
     return render(request, 'accounts/dashboard.html')
 
+
+
+
+
 def forgotPassword(request):
     if request.method == "POST":
         email = request.POST['email']
@@ -135,6 +139,19 @@ def forgotPassword(request):
             return redirect('forgotPassword')
 
     return render(request, 'forgotPassword.html')
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 def resetpassword_validate(request, uidb64, token):
     try:
